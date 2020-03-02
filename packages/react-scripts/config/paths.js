@@ -73,6 +73,11 @@ module.exports = {
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   publicUrlOrPath,
+  // path for extension
+  extensionBackgroundJs: resolveModule(resolveApp, `/src/background`),
+  extensionPopupIndexJs: resolveModule(resolveApp, `/src/popup`),
+  extensionContentScriptJs: resolveModule(resolveApp, `/src/content_script`),
+  extensionOptionsIndexJs: resolveModule(resolveApp, `/src/options`),
 };
 
 // @remove-on-eject-begin
@@ -100,6 +105,11 @@ module.exports = {
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
   appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+  // path for extension
+  extensionBackgroundJs: resolveModule(resolveApp, `/src/background`),
+  extensionPopupIndexJs: resolveModule(resolveApp, `/src/popup`),
+  extensionContentScriptJs: resolveModule(resolveApp, `/src/content_script`),
+  extensionOptionsIndexJs: resolveModule(resolveApp, `/src/options`),
 };
 
 const ownPackageJson = require('../package.json');
@@ -135,6 +145,23 @@ if (
     ownNodeModules: resolveOwn('node_modules'),
     appTypeDeclarations: resolveOwn(`${templatePath}/src/react-app-env.d.ts`),
     ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
+    // path for extension
+    extensionBackgroundJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/background`
+    ),
+    extensionPopupIndexJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/popup`
+    ),
+    extensionContentScriptJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/content_script`
+    ),
+    extensionOptionsIndexJs: resolveModule(
+      resolveOwn,
+      `${templatePath}/src/options`
+    ),
   };
 }
 // @remove-on-eject-end
