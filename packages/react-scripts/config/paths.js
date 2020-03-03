@@ -74,10 +74,10 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrlOrPath,
   // path for extension
-  extensionBackgroundJs: resolveModule(resolveApp, `/src/background`),
-  extensionPopupIndexJs: resolveModule(resolveApp, `/src/popup`),
-  extensionContentScriptJs: resolveModule(resolveApp, `/src/content_script`),
-  extensionOptionsIndexJs: resolveModule(resolveApp, `/src/options`),
+  extensionBackgroundJs: resolveModule(resolveApp, `src/background`),
+  extensionPopupIndexJs: resolveModule(resolveApp, `src/popup`),
+  extensionContentScriptJs: resolveModule(resolveApp, `src/content_script`),
+  extensionOptionsIndexJs: resolveModule(resolveApp, `src/options`),
 };
 
 // @remove-on-eject-begin
@@ -106,10 +106,10 @@ module.exports = {
   appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
   // path for extension
-  extensionBackgroundJs: resolveModule(resolveApp, `/src/background`),
-  extensionPopupIndexJs: resolveModule(resolveApp, `/src/popup`),
-  extensionContentScriptJs: resolveModule(resolveApp, `/src/content_script`),
-  extensionOptionsIndexJs: resolveModule(resolveApp, `/src/options`),
+  extensionBackgroundJs: resolveModule(resolveApp, `src/background`),
+  extensionPopupIndexJs: resolveModule(resolveApp, `src/popup`),
+  extensionContentScriptJs: resolveModule(resolveApp, `src/content_script`),
+  extensionOptionsIndexJs: resolveModule(resolveApp, `src/options`),
 };
 
 const ownPackageJson = require('../package.json');
