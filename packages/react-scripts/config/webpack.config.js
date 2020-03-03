@@ -138,6 +138,21 @@ module.exports = function(webpackEnv) {
     return loaders;
   };
 
+  const getChromiumEntry = () => {
+    let entry = {
+      background: paths.extensionBackgroundJs,
+      content_script: paths.extensionContentScriptJs,
+      options: paths.extensionOptionsIndexJs,
+      popup: paths.extensionPopupIndexJs,
+    };
+    Object.keys(entry).forEach(k => {
+      if (!entry[k]) {
+        delete entry[k];
+      }
+    });
+    return entry;
+  };
+
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
@@ -172,14 +187,7 @@ module.exports = function(webpackEnv) {
           // changing JS code would still trigger a refresh.
         ].filter(Boolean),
       },
-      isEnvDevelopment
-        ? {}
-        : {
-            background: paths.extensionBackgroundJs,
-            content_script: paths.extensionContentScriptJs,
-            options: paths.extensionOptionsIndexJs,
-            popup: paths.extensionPopupIndexJs,
-          }
+      isEnvDevelopment ? {} : getChromiumEntry()
     ),
     output: {
       // The build folder.

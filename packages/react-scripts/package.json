@@ -1,6 +1,6 @@
 {
   "name": "chromium-extension-react-scripts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Chromium extension configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
