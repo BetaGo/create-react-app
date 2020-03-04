@@ -460,7 +460,6 @@ function run(
         // TODO: Remove with next major release.
         if (!supportsTemplates && (template || '').includes('typescript')) {
           allDependencies.push(
-            '@types/chrome',
             '@types/node',
             '@types/react',
             '@types/react-dom',
